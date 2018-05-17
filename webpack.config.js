@@ -3,6 +3,10 @@ module.exports={
     output:{
         path:__dirname+"/public",
         filename:"bundel.js"
+    },
+    devServer:{
+        contentBase:"./public",
+        historyApiFallback:true,
+        inline: true,
     }
-
 }
