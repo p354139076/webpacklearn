@@ -9,5 +9,21 @@ module.exports={
         contentBase:"./public",
         historyApiFallback:true,
         inline: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "env", "react"
+                        ]
+                    }
+                },
+                exclude: /node_modules/
+            }
+        ]
     }
-}
+};
