@@ -66,7 +66,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./app/Greeter.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./app/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -76,9 +76,31 @@
   !*** ./app/Greeter.js ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("var a=1;\r\nvar b=2;\r\na+b\n\n//# sourceURL=webpack:///./app/Greeter.js?");
+eval("var config = __webpack_require__(/*! ../config.json */ \"./config.json\");\r\n\r\nmodule.exports = function() {\r\n  var greet = document.createElement('div');\r\n  greet.textContent = config.greetText;\r\n  return greet; \r\n};\n\n//# sourceURL=webpack:///./app/Greeter.js?");
+
+/***/ }),
+
+/***/ "./app/main.js":
+/*!*********************!*\
+  !*** ./app/main.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const greeter =__webpack_require__(/*! ./Greeter */ \"./app/Greeter.js\");\r\ndocument.querySelector(\"#root\").appendChild(greeter());\n\n//# sourceURL=webpack:///./app/main.js?");
+
+/***/ }),
+
+/***/ "./config.json":
+/*!*********************!*\
+  !*** ./config.json ***!
+  \*********************/
+/*! exports provided: greetText, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"greetText\":\"Hi there and greetings from JSON!\"};\n\n//# sourceURL=webpack:///./config.json?");
 
 /***/ })
 
